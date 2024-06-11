@@ -1,0 +1,209 @@
+body {
+    margin: 0;
+    padding: 0;
+    font-family: 'Poppins', sans-serif;
+}
+
+.loading-wrapper.active {
+    display: flex;
+}
+
+.loading-wrapper {
+    display: none;
+    justify-content: center;
+    align-items: center;
+    width: 400px;
+    height: 600px;
+    background-color: #686868;
+}
+
+.lds-ring {
+    display: inline-block;
+    position: relative;
+    width: 80px;
+    height: 80px;
+}
+
+.lds-ring div {
+    box-sizing: border-box;
+    display: block;
+    position: absolute;
+    width: 64px;
+    height: 64px;
+    margin: 8px;
+    border: 8px solid #fff;
+    border-radius: 50%;
+    animation: lds-ring 1.2s cubic-bezier(0.5, 0, 0.5, 1) infinite;
+    border-color: #fff transparent transparent transparent;
+}
+
+.lds-ring div:nth-child(1) {
+    animation-delay: -0.45s;
+}
+
+.lds-ring div:nth-child(2) {
+    animation-delay: -0.3s;
+}
+
+.lds-ring div:nth-child(3) {
+    animation-delay: -0.15s;
+}
+
+@keyframes lds-ring {
+    0% {
+        transform: rotate(0deg);
+    }
+
+    100% {
+        transform: rotate(360deg);
+    }
+}
+
+#pop-up-wrapper.loading .pop-up-modal {
+    background-color: #e1e1e1;
+    display: none;
+}
+
+#pop-up-wrapper.loading .pop-up-modal .footer-modal {
+    background-color: #e1e1e1;
+    width: 0;
+    height: 0;
+    display: none;
+}
+
+#pop-up-wrapper .pop-up-modal {
+    width: 400px;
+    height: 460px;
+    position: relative;
+    display: flex;
+    background-color: #4351D1;
+    flex-direction: column;
+    justify-content: end;
+}
+
+#pop-up-wrapper .pop-up-modal.phishing {
+    background-color: #FD263B;
+}
+
+#pop-up-wrapper .pop-up-modal .header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-direction: column;
+    color: #FFF;
+    height: 90px;
+}
+
+#pop-up-wrapper .pop-up-modal .header .logo {
+    display: flex;
+    align-items: center;
+}
+
+#pop-up-wrapper .pop-up-modal .header .logo img {
+    width: 20px;
+    height: 20px;
+}
+
+#pop-up-wrapper .pop-up-modal .header .logo p {
+    font-size: 12px;
+}
+
+#pop-up-wrapper .pop-up-modal .header .logo p span {
+    font-weight: 600;
+}
+
+#pop-up-wrapper .pop-up-modal .header .sitename {
+    font-size: 20px;
+    font-weight: 600;
+}
+
+#pop-up-wrapper .pop-up-modal .content-modal {
+    flex: 1 1 0;
+    display: flex;
+    justify-content: center;
+    align-items: end;
+}
+
+#pop-up-wrapper .pop-up-modal .content-modal svg {
+    position: absolute;
+}
+
+#pop-up-wrapper .pop-up-modal .content-modal .circular-progress {
+    --progress: 39;
+    --size: 320px;
+    --half-size: calc(var(--size) / 2);
+    --stroke-width: 25px;
+    --radius: calc((var(--size) - var(--stroke-width)) / 2);
+    --circumference: calc(var(--radius) * pi * 2);
+    --dash: calc((var(--progress) * var(--circumference)) / 100);
+    position: absolute;
+    top: 140px;
+}
+
+#pop-up-wrapper .pop-up-modal .content-modal .circular-progress circle {
+    cx: var(--half-size);
+    cy: var(--half-size);
+    r: var(--radius);
+    stroke-width: var(--stroke-width);
+    fill: none;
+    stroke-linecap: round;
+}
+
+#pop-up-wrapper .pop-up-modal .content-modal .circular-progress circle.bg {
+    stroke: #ddd;
+}
+
+#pop-up-wrapper .pop-up-modal .content-modal .circular-progress circle.fg {
+    transform: rotate(-90deg);
+    transform-origin: var(--half-size) var(--half-size);
+    stroke-dasharray: var(--dash) calc(var(--circumference) - var(--dash));
+    transition: stroke-dasharray 0.3s linear 0s;
+    stroke: #90FD71;
+    rotate: -90deg;
+}
+
+#pop-up-wrapper .pop-up-modal .content-modal .trust-score {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    color: #FFF;
+    font-weight: 600;
+    font-size: 20px;
+}
+
+#pop-up-wrapper .pop-up-modal .content-modal .score {
+    font-size: 36px;
+    font-weight: bold;
+    padding-top: 5px;
+}
+
+#pop-up-wrapper .pop-up-modal.phishing .footer-modal {
+    background-color: #B00F1E;
+}
+
+#pop-up-wrapper .pop-up-modal .footer-modal {
+    width: 100%;
+    height: 160px;
+    background-color: #31369A;
+    border-top-left-radius: 20px;
+    border-top-right-radius: 20px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    color: #fff;
+    padding: 50px 40px;
+    text-align: center;
+    box-sizing: border-box;
+    z-index: 100;
+}
+
+#pop-up-wrapper .pop-up-modal .footer-modal .sitename {
+    font-weight: 800;
+    margin-bottom: 20px;
+    font-size: 20px;
+}
+
+#pop-up-wrapper .pop-up-modal .footer-modal .desc {
+    font-size: 14px;
+}
