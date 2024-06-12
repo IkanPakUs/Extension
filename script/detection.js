@@ -1,5 +1,5 @@
 const checkPhishing = async (url) => {
-    const host = 'http://localhost:5000/api/classify/'
+    const host = 'https://phisdect.azurewebsites.net/api/classify/'
     const body = JSON.stringify({
         website_uri: url
     })

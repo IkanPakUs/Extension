@@ -1,6 +1,4 @@
 window.onload = () => {
-    document.querySelector('.pop-up-modal .header img').src = browser.runtime.getURL('asset/logo.png')
-
     document.querySelector('.loading-wrapper').classList.add('active');
     document.querySelector('#pop-up-wrapper').classList.add('loading');
 
@@ -17,6 +15,8 @@ const createPopUp = (is_phishing, score) => {
     const pop_up_modal = document.querySelector('#pop-up-wrapper .pop-up-modal');
     const sitename = document.querySelector('#pop-up-wrapper .sitename');
     const desc = document.querySelector('#pop-up-wrapper .desc');
+
+    document.querySelector('.pop-up-modal .header img').src = browser.runtime.getURL('asset/logo.png')
 
     score = Number(50 - (score * 50)).toFixed(0);
     trust_score = score * 2;
